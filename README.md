@@ -1,1 +1,1 @@
-This is some persoanl repo for fun
+Repo for some personal fun card game projects
