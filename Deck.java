@@ -43,6 +43,10 @@ public class Deck{
         }
     }
 
+    public Card drawTopCard(){
+        return contents.remove(0);
+    }
+
     /**
      * Shuffles the deck
      */

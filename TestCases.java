@@ -7,9 +7,11 @@ public class TestCases {
 
         Deck d = new Deck(52);
 
-        //d.shuffle();
+        d.shuffle();
 
-        System.out.println(d);
+        //System.out.println(d);
+
+        System.out.println(d.drawTopCard());
     }
     
 }
