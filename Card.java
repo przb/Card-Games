@@ -1,4 +1,9 @@
 public class Card{
+
+    public static final int ACE = 1;
+    public static final int JACK = 11;
+    public static final int QUEEN = 12;
+    public static final int KING = 13;
     
     /**
      * Stores the number on the card. Face cards are 11-13 for Jack - King. 
@@ -34,10 +39,94 @@ public class Card{
     }
 
 
-    public String toString(){
-        //TODO
+    /**
+     * Accessor method for suits
+     * @return the suit of the card
+     */
+    public String getSuit(){
+        if (suit == 's'){
+            return "Spade";
+        } else if (suit == 'c'){
+            return "Club";
+        } else if (suit == 'h'){
+            return "Heart";
+        } else if (suit == 'd'){
+            return "Diamond";
+        } else{
+            return "error";
+        }
+    }
 
-        return "Hello there!";
+    /**
+     * Returns the value of the number as an Int.
+     * @return The value of the number as an int.
+     */
+    public int getValue(){
+        return (int)number;
+    }
+
+
+    /**
+     * Return a nicely formatted string in the "X of Y" format, where x = number and y = suit of the card.
+     */
+    public String toString(){
+        String valueOfCard;
+        switch(number){
+            case 1: 
+                valueOfCard = "Ace";
+                break;
+            case 2: 
+                valueOfCard = "Two";
+                break;
+
+            case 3: 
+                valueOfCard = "Three";
+                break;
+
+            case 4: 
+                valueOfCard = "Four";
+                break;
+
+            case 5: 
+                valueOfCard = "Five";
+                break;
+
+            case 6: 
+                valueOfCard = "Six";
+                break;
+
+            case 7: 
+                valueOfCard = "Seven";
+                break;
+
+            case 8: 
+                valueOfCard = "Eight";
+                break;
+
+            case 9: 
+                valueOfCard = "Nine";
+                break;
+
+            case 10: 
+                valueOfCard = "Ten";
+                break;
+
+            case 11: 
+                valueOfCard = "Jack";
+                break;
+
+            case 12: 
+                valueOfCard = "Queen";
+                break;
+
+            case 13: 
+                valueOfCard = "King";
+                break;
+
+            default: 
+                valueOfCard = "";
+        }
+        return valueOfCard + " of " + this.getSuit() + "s" ;
 
     }
 }
