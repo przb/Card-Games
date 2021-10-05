@@ -1,9 +1,5 @@
 public class Card{
 
-    public static final int ACE = 1;
-    public static final int JACK = 11;
-    public static final int QUEEN = 12;
-    public static final int KING = 13;
     
     /**
      * Stores the number on the card. Face cards are 11-13 for Jack - King. 
@@ -23,6 +19,7 @@ public class Card{
      * Stores the status of the card. If its public then it will be true
      */
     private boolean isFlipped;
+
 
 
     /**
@@ -58,11 +55,19 @@ public class Card{
     }
 
     /**
-     * Returns the value of the number as an Int.
+     * Accessor for the value of the number as an Int.
      * @return The value of the number as an int.
      */
     public int getValue(){
         return (int)number;
+    }
+
+    /**
+     * Accessor method for the isflipped variable
+     * @return - true if the card is public and flipped, false otherwise.
+     */
+    public boolean getFlipStatus(){
+        return isFlipped;
     }
 
 
@@ -127,6 +132,7 @@ public class Card{
                 valueOfCard = "";
         }
         return valueOfCard + " of " + this.getSuit() + "s" ;
+
 
     }
 }
