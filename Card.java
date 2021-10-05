@@ -23,18 +23,26 @@ public class Card{
 
 
     /**
-     * Constructor
+     * 
+     * @param suit First letter of the suit stored as a char.
+     * @param number The number of the card. Face cards are stored as 11, 12, 13.
+     * Aces are stored as 1.
+     * @param isFlipped Represents the publicity. True if everyone can see the card.
+     * false otherwise.
      */
     public Card(char suit, byte number, boolean isFlipped){
         this.number = number;
         this.suit = suit;
         this.isFlipped = isFlipped;
     }
-
+/**
+ * 
+ * @param suit
+ * @param number
+ */
     public Card(char suit, int number){
         this(suit, (byte)number, false);
     }
-
 
     /**
      * Accessor method for suits
@@ -69,7 +77,6 @@ public class Card{
     public boolean getFlipStatus(){
         return isFlipped;
     }
-
 
     /**
      * Return a nicely formatted string in the "X of Y" format, where x = number and y = suit of the card.
