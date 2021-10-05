@@ -1,3 +1,6 @@
+/**
+ * Class to store variables pertaining to a single card
+ */
 public class Card{
 
     
