@@ -14,13 +14,10 @@ public class Card{
      */
     private char suit;
 
-
     /**
      * Stores the status of the card. If its public then it will be true
      */
     private boolean isFlipped;
-
-
 
     /**
      * 
