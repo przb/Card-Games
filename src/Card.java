@@ -1,11 +1,15 @@
 /**
  * Class to store variables pertaining to a single card
  */
-public class Card{
+public class Card {
 
-    
     /**
-     * Stores the number on the card. Face cards are 11-13 for Jack - King. 
+     * Array to store the string values of the card withe their index - 1
+     */
+    public static String[] stringValues = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"]
+
+    /**
+     * Stores the number on the card. Face cards are 11-13 for Jack - King.
      * Aces are 1.
      */
     private int number;
@@ -24,122 +28,72 @@ public class Card{
 
     /**
      * 
-     * @param suit First letter of the suit stored as a char.
-     * @param number The number of the card. Face cards are stored as 11, 12, 13.
-     * Aces are stored as 1.
+     * @param suit      First letter of the suit stored as a char.
+     * @param number    The number of the card. Face cards are stored as 11, 12, 13.
+     *                  Aces are stored as 1.
      * @param isFlipped Represents the publicity. True if everyone can see the card.
-     * false otherwise.
+     *                  false otherwise.
      */
-    public Card(char suit, byte number, boolean isFlipped){
+    public Card(char suit, int number, boolean isFlipped) {
         this.number = number;
         this.suit = suit;
         this.isFlipped = isFlipped;
     }
-/**
- * 
- * @param suit
- * @param number
- */
-    public Card(char suit, int number){
+
+    /**
+     * 
+     * @param suit
+     * @param number
+     */
+    public Card(char suit, int number) {
         this(suit, number, false);
     }
 
     /**
      * Accessor method for suits
+     * 
      * @return the suit of the card
      */
-    public String getSuit(){
-        if (suit == 's'){
+    public String getSuit() {
+        if (suit == 's') {
             return "Spade";
-        } else if (suit == 'c'){
+        } else if (suit == 'c') {
             return "Club";
-        } else if (suit == 'h'){
+        } else if (suit == 'h') {
             return "Heart";
-        } else if (suit == 'd'){
+        } else if (suit == 'd') {
             return "Diamond";
-        } else{
+        } else {
             return "error";
         }
     }
 
     /**
      * Accessor for the value of the number as an Int.
+     * 
      * @return The value of the number as an int.
      */
-    public int getValue(){
+    public int getValue() {
         return number;
     }
 
     /**
      * Accessor method for the isflipped variable
+     * 
      * @return - true if the card is public and flipped, false otherwise.
      */
-    public boolean getFlipStatus(){
+    public boolean getFlipStatus() {
         return isFlipped;
     }
 
     /**
-     * Return a nicely formatted string in the "X of Y" format, where x = number and y = suit of the card.
+     * Return a nicely formatted string in the "X of Y" format, where x = number and
+     * y = suit of the card.
      */
-    public String toString(){
-        String valueOfCard;
-        switch(number){
-            case 1: 
-                valueOfCard = "Ace";
-                break;
-            case 2: 
-                valueOfCard = "Two";
-                break;
+    public String toString() {
+        String valueOfCard = stringValues[number - 1];
 
-            case 3: 
-                valueOfCard = "Three";
-                break;
-
-            case 4: 
-                valueOfCard = "Four";
-                break;
-
-            case 5: 
-                valueOfCard = "Five";
-                break;
-
-            case 6: 
-                valueOfCard = "Six";
-                break;
-
-            case 7: 
-                valueOfCard = "Seven";
-                break;
-
-            case 8: 
-                valueOfCard = "Eight";
-                break;
-
-            case 9: 
-                valueOfCard = "Nine";
-                break;
-
-            case 10: 
-                valueOfCard = "Ten";
-                break;
-
-            case 11: 
-                valueOfCard = "Jack";
-                break;
-
-            case 12: 
-                valueOfCard = "Queen";
-                break;
-
-            case 13: 
-                valueOfCard = "King";
-                break;
-
-            default: 
-                valueOfCard = "";
-        }
-        return valueOfCard + " of " + this.getSuit() + "s" ;
-
+        return valueOfCard + " of " + this.getSuit() + "s";
 
     }
 }
