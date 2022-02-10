@@ -8,7 +8,7 @@ public class Card{
      * Stores the number on the card. Face cards are 11-13 for Jack - King. 
      * Aces are 1.
      */
-    private byte number;
+    private int number;
 
     /**
      * Stores the suite of the card.
@@ -41,7 +41,7 @@ public class Card{
  * @param number
  */
     public Card(char suit, int number){
-        this(suit, (byte)number, false);
+        this(suit, number, false);
     }
 
     /**
@@ -67,7 +67,7 @@ public class Card{
      * @return The value of the number as an int.
      */
     public int getValue(){
-        return (int)number;
+        return number;
     }
 
     /**
