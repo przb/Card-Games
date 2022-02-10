@@ -6,7 +6,7 @@ public class Card {
     /**
      * Array to store the string values of the card withe their index - 1
      */
-    public static String[] stringValues = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"]
+    public static final String[] STRING_VALUES = {"Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"};
 
     /**
      * Stores the number on the card. Face cards are 11-13 for Jack - King.
@@ -41,6 +41,14 @@ public class Card {
     }
 
     /**
+     * Clones a card
+     * @param c - card to clone
+     */
+    public Card(Card c){
+        this(c.getCharSuit(), c.getNumber(), c.getFlipStatus());
+    }
+
+    /**
      * 
      * @param suit
      * @param number
@@ -68,12 +76,18 @@ public class Card {
         }
     }
 
+
+    public char getCharSuit(){
+        return suit;
+    }
+
+
     /**
      * Accessor for the value of the number as an Int.
      * 
      * @return The value of the number as an int.
      */
-    public int getValue() {
+    public int getNumber() {
         return number;
     }
 
@@ -91,7 +105,7 @@ public class Card {
      * y = suit of the card.
      */
     public String toString() {
-        String valueOfCard = stringValues[number - 1];
+        String valueOfCard = STRING_VALUES[number - 1];
 
         return valueOfCard + " of " + this.getSuit() + "s";
 
