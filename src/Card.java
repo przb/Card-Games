@@ -1,7 +1,7 @@
 /**
  * Class to store variables pertaining to a single card
  */
-public class Card {
+public class Card implements Cloneable{
 
     /**
      * Array to store the string values of the card withe their index - 1
@@ -49,6 +49,32 @@ public class Card {
     }
 
     /**
+     * override clone method
+     * @param obj
+     * @return
+     */
+    public Object clone(){
+        try{
+            return super.clone();
+        }
+        catch(CloneNotSupportedException e){
+            System.out.println("unhelpful error");
+            return this;
+        }
+    }
+
+    /**
+     * Custom Clone method
+     * @param c
+     * @return
+     */
+    public void makeClone(Card c){
+        this.suit = c.getCharSuit();
+        this.number = c.getNumber();
+        this.isFlipped = c.getFlipStatus();
+    }
+
+    /**
      * 
      * @param suit
      * @param number
@@ -76,7 +102,10 @@ public class Card {
         }
     }
 
-
+    /**
+     * Accesor for char of suite
+     * @return char of suite
+     */
     public char getCharSuit(){
         return suit;
     }
