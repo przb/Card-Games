@@ -84,6 +84,25 @@ public class Card implements Cloneable{
     }
 
     /**
+     * Override equals method
+     */
+    @Override
+    public boolean equals(Object obj){
+        if (obj == null){
+            return false;
+        }
+        else if (obj.getClass() != this.getClass()){
+            return false;
+        }
+        else {
+            Card c = (Card) obj;
+            return this.getCharSuit() == c.getCharSuit() &&
+                this.getNumber() == c.getNumber() &&
+                this.getFlipStatus() == c.getFlipStatus();
+        }
+    }
+
+    /**
      * Accessor method for suits
      * 
      * @return the suit of the card
