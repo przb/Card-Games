@@ -5,7 +5,7 @@ import java.util.Collections;
  * Class to store an ArrayList of many cards, and to contain actions consistant
  * of a draw pile.
  */
-public class Deck {
+public class Deck implements Cloneable{
     public static final int CARDS_IN_SUIT = 13;
     ArrayList<Card> contents = new ArrayList<Card>();
 
@@ -49,6 +49,18 @@ public class Deck {
         } else if (numCards == 54) {
             newFullDeck();
             //TODO Add jokers
+        }
+    }
+
+    public Object clone(){
+        try{
+            Deck clone = (Deck) super.clone();
+            clone.contents = new ArrayList<Card>(clone.contents);
+            return clone;
+        }
+        catch(CloneNotSupportedException e){
+            System.out.println("Error");
+            return this;
         }
     }
 

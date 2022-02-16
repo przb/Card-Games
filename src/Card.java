@@ -9,6 +9,11 @@ public class Card implements Cloneable{
     public static final String[] STRING_VALUES = {"Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"};
 
     /**
+     * Stoes the number of cards
+     */
+    public static int numberOfCards = 0;
+
+    /**
      * Stores the number on the card. Face cards are 11-13 for Jack - King.
      * Aces are 1.
      */
@@ -20,6 +25,7 @@ public class Card implements Cloneable{
      * 'h' for heart. 'd' for diamond.
      */
     private char suit;
+    
 
     /**
      * Stores the status of the card. If its public then it will be true
@@ -38,6 +44,7 @@ public class Card implements Cloneable{
         this.number = number;
         this.suit = suit;
         this.isFlipped = isFlipped;
+        numberOfCards++;
     }
 
     /**
@@ -53,13 +60,17 @@ public class Card implements Cloneable{
      * @param obj
      * @return
      */
+    @Override
     public Object clone(){
         try{
-            return super.clone();
+            Card clone = (Card) super.clone();
+            // clone.numberOfCards++;
+            return clone;
         }
         catch(CloneNotSupportedException e){
             System.out.println("unhelpful error");
             return this;
+            
         }
     }
 
